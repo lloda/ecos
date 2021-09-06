@@ -20,10 +20,10 @@ pfloat logax_x_h[3] = {0.0,0.0,1.0};
 static char * test_log_ax_x(){
 pwork *mywork;
 idxint exitflag;
- 
+
 /* print test name */
 printf("=================================== log(ax)-x ===================================\n");
- 
+
 /* set up data */
 mywork = ECOS_setup(logax_x_n, logax_x_m, logax_x_p, logax_x_l, logax_x_ncones, NULL, logax_x_nexc,
                     logax_x_Gpr, logax_x_Gjc, logax_x_Gir,
@@ -46,7 +46,7 @@ pfloat abs_err = fabs(true_x-ecos_x);
 ECOS_cleanup(mywork, 0);
 
 mu_assert("log_ax_x: ECOS failed to produce outputflag OPTIMAL", exitflag == ECOS_OPTIMAL );
-mu_assert("log_ax_x: ECOS failed to produce the desired precision", abs_err < 1e-11);
+mu_assert("log_ax_x: ECOS failed to produce the desired precision", abs_err < 1.8e-11);
 
 return 0;
 }
