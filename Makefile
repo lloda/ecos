@@ -5,7 +5,8 @@
 
 # Configuration of make process in ecos.mk
 include ecos.mk
-CFLAGS += -Iinclude -Iexternal/ldl/include -Iexternal/amd/include -Iexternal/SuiteSparse_config 
+CFLAGS += -Iinclude -Iexternal/ldl/include -Iexternal/amd/include -Iexternal/SuiteSparse_config
+CFLAGS += $(MY_CFLAGS)
 TEST_INCLUDES = -Itest -Itest/generated
 
 # Compile all C code, including the C-callable routine
@@ -51,7 +52,7 @@ splamm.o            : include/splamm.h include/glblopts.h include/cone.h include
 ctrlc.o             : include/ctrlc.h include/glblopts.h include/cone.h include/ecos.h
 timer.o             : include/timer.h include/glblopts.h include/cone.h include/ecos.h
 equil.o             : include/equil.h include/glblopts.h include/cone.h include/ecos.h
-expcone.o           : include/expcone.h  
+expcone.o           : include/expcone.h
 wright_omega.o      : include/wright_omega.h
 
 
